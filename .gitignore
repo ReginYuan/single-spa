@@ -1,0 +1,5 @@
+#忽略要提交的文件
+
+# 忽略 node_modules 目录  
+system-imp/node_modules/
+system-imp/dist/
