@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>react项目</title>
 </head>
 <body>
     <div id="root"></div>
+    <script type="systemjs-importmap">
+        {
+            "imports":{
+                "react":"https://cdn.bootcdn.net/ajax/libs/react/17.0.2/umd/react.production.min.js"
+                "react-dom":"https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.2/umd/react-dom.productior.min.js"
+            }
+        }
+    </script>
+     <script src="https://cdn.bootcdn.net/ajax/libs/systemjs/6.10.1/system.min.js"></script>
+     <script>
+        // 这里可以动态加载模块，可以远程加载链接就是systemjs-importmap中的链接
+        // AMD依赖前置引入index.js的时候 需先加载远程的 react react-dom
+        System.import('./index.js')
+     </script> 
 </body>
 </html>

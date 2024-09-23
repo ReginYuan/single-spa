@@ -19,13 +19,13 @@ module.exports = (env) => {
             ]
         },
         plugins: [
-            // 生产环境下才生成html文件
+            // 生产环境下才生成html文件，开发环境下不生成html
             !env.production &&
-                new HtmlWebpackPlugin({
+                new HtmlWebpackPlugin({ 
                     template: './public/index.html'
                 })
         ].filter(Boolean),
         // 如果是生产环境，就将react和react-dom设置为外部依赖
-        externals: env.production ? ['react', 'react-dom'] : []
+        externals: env.production ? ['react', 'react-dom'] : [] //生产环境不打包react
     };
 };
